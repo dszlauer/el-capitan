@@ -1,0 +1,27 @@
+.header-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+}
+
+.header-container img {
+  height: 75px;
+}
+
+.header-container div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container nav > a {
+  color: white;
+  margin-left: 20px;
+}
+
+.header-container a {
+  text-decoration: none;
+}

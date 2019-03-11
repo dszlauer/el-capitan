@@ -1,0 +1,29 @@
+.admin-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  align-items: center;
+
+  /* border: 1px solid green; */
+}
+
+.dashboard-container {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row;
+  align-items: center;
+
+  /* border: 1px solid blue; */
+}
+
+.admin-container img {
+  width: 500px;
+}
+
+.form-container {
+  height: 100%;
+
+  /* border: 1px solid red; */
+}

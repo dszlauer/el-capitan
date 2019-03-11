@@ -1,0 +1,17 @@
+.background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.enter-btn {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 0 auto;
+  font-size: 100px;
+}
