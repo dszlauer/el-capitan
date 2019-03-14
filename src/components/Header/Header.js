@@ -11,7 +11,9 @@ class Header extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      toggle: false
+    };
   }
 
   componentDidMount() {
@@ -31,17 +33,26 @@ class Header extends Component {
     }&scope=openid%20email%20profile&redirect_uri=${redirectUri}&response_type=code`;
   };
 
+  toggler = () => {
+    this.setState(prevState => {
+      return {
+        toggle: !prevState.toggle
+      };
+    });
+  };
+
   render() {
     return (
-      <div className="header-container">
-        <header>
+      <header className="header-container">
+        <div>
           <NavLink to="/">
-            <div>
+            <div className="logo">
               <img src={logo} />
             </div>
           </NavLink>
           <div>
-            <nav>
+            <button onClick={this.toggler}>Menu</button>
+            <nav className={this.state.toggle ? "show" : "hide"}>
               <NavLink to="/products">
                 <a href="#">ALL ITEMS</a>
               </NavLink>
@@ -63,8 +74,8 @@ class Header extends Component {
             </nav>
           </div>
           <input className="search-box" placeholder="search items" />
-        </header>
-      </div>
+        </div>
+      </header>
     );
   }
 }

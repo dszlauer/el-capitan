@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const session = require("express-session");
 const massive = require("massive");
+app.use(express.static(`${__dirname}/../build`));
 
 // CONTROLLERS
 const authController = require("./controllers/authController");
@@ -10,8 +11,6 @@ const itemsController = require("./controllers/itemsController");
 
 require("dotenv").config();
 app.use(bodyParser.json());
-
-app.use(express.static(`${__dirname}/../build`));
 
 // SESSIONS
 app.use(
@@ -42,12 +41,12 @@ app.delete("/api/products/:id", itemsController.deleteProduct);
 app.get("/auth", authController.login);
 app.get("/api/user-data", authController.getUserData);
 
-const PORT = process.env.SERVER_PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`I hear ya on ${PORT}`);
-});
-
 const path = require("path");
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build/index.html"));
+});
+
+const PORT = process.env.SERVER_PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`I hear ya on ${PORT}`);
 });

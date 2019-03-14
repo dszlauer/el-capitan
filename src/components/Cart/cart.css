@@ -1,3 +1,7 @@
 table {
+  width: 100%;
   background: white;
+}
+tr {
+  border-top: 1px solid black;
 }
