@@ -1,7 +1,7 @@
 .main-items-container {
   width: 100%;
   display: flex;
-  justify-content: space-start;
+  justify-content: space-around;
   flex-flow: wrap;
 }
 
