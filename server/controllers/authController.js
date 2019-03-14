@@ -4,16 +4,16 @@ module.exports = {
   login: (req, res) => {
     const db = req.app.get("db");
 
-    // let redirect_uri = process.env.HOST
-    //   ? `http://${req.headers.host}/auth`
-    //   : `https://${req.headers.host}/auth`;
+    let redirect_uri = process.env.HOST
+      ? `http://${req.headers.host}/auth`
+      : `https://${req.headers.host}/auth`;
 
     const payload = {
       client_id: process.env.REACT_APP_CLIENT_ID,
       client_secret: process.env.AUTH0_CLIENT_SECRET,
       grant_type: "authorization_code",
       code: req.query.code,
-      redirect_uri: `https://${req.headers.host}/auth`
+      redirect_uri
     };
 
     function tradeCodeForAccessToken() {
